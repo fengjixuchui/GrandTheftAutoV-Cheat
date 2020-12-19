@@ -1,5 +1,111 @@
 #include "stdafx.h"
 
+//https://wiki.rage.mp/index.php?title=Weapons
+const std::vector<WeaponHashesStruct> Cheat::GameArrays::WeaponsHashList = {
+	{ "Knife", 0x99B507EA					}, //WeaponKnife
+	{ "Nightstick", 0x678B81B1				}, //WeaponNightstick
+	{ "Hammer", 0x4E875F73					}, //WeaponHammer
+	{ "Bat", 0x958A4A8F						}, //WeaponBat
+	{ "Golf Club", 0x440E4788				}, //WeaponGolfClub
+	{ "Crowbar", 0x84BD7BFD					}, //WeaponCrowbar
+	{ "Pistol", 0x1B06D571					}, //WeaponPistol
+	{ "Combat Pistol", 0x5EF9FEC4			}, //WeaponCombatPistol
+	{ "AP Pistol", 0x22D8FE39				}, //WeaponAPPistol
+	{ "Pistol .50", 0x99AEEB3B				}, //WeaponPistol50
+	{ "Micro SMG", 0x13532244				}, //WeaponMicroSMG
+	{ "SMG", 0x2BE6766B						}, //WeaponSMG
+	{ "Assault SMG", 0xEFE7E2DF				}, //WeaponAssaultSMG
+	{ "Combat PDW", 0x0A3D4D34				}, //WeaponCombatPDW
+	{ "Assault Rifle", 0xBFEFFF6D			}, //WeaponAssaultRifle
+	{ "Carbine Rifle", 0x83BF0278			}, //WeaponCarbineRifle
+	{ "Advanced Rifle", 0xAF113F99			}, //WeaponAdvancedRifle
+	{ "MG", 0x9D07F764						}, //WeaponMG
+	{ "Combat MG", 0x7FD62962				}, //WeaponCombatMG
+	{ "Pump Shotgun", 0x1D073A89			}, //WeaponPumpShotgun
+	{ "Saw-Off Shotgun", 0x7846A318			}, //WeaponSawnOffShotgun
+	{ "Assault Shotgun", 0xE284C527			}, //WeaponAssaultShotgun
+	{ "Bullpup Shotgun", 0x9D61E50F			}, //WeaponBullpupShotgun
+	{ "Stun Gun", 0x3656C8C1				}, //WeaponStunGun
+	{ "Sniper Rifle", 0x5FC3C11				}, //WeaponSniperRifle
+	{ "Heavy Sniper", 0xC472FE2				}, //WeaponHeavySniper
+	{ "Grenade Launcher", 0xA284510B		}, //WeaponGrenadeLauncher
+	{ "Grenade Launcher (Smoke)", 0x4DD2DC56}, //WeaponGrenadeLauncherSmoke
+	{ "RPG", 0xB1CA77B1						}, //WeaponRPG
+	{"Minigun", 0x42BF8A85					}, //WeaponMinigun
+	{"Grenade", 0x93E220BD					}, //WeaponGrenade
+	{ "Sticky Bomb", 0x2C3731D9				}, //WeaponStickyBomb
+	{ "Smoke Grenade", 0xFDBC8A50			}, //WeaponSmokeGrenade
+	{ "BZ Gas", 0xA0973D5E					}, //WeaponBZGas
+	{ "Molotov", 0x24B17070					}, //WeaponMolotov
+	{ "Fire Extinguisher", 0x60EC506		}, //WeaponFireExtinguisher
+	{ "Petrol Can", 0x34A67B97				}, //WeaponPetrolCan
+	{ "SNS Pistol", 0xBFD21232				}, //WeaponSNSPistol
+	{ "Special Carbine", 0xC0A3098D			}, //WeaponSpecialCarbine
+	{ "Heavy Pistol", 0xD205520E			}, //WeaponHeavyPistol
+	{ "Bullpup Rifle", 0x7F229F94			}, //WeaponBullpupRifle
+	{ "Homing Launcher", 0x63AB0442			}, //WeaponHomingLauncher
+	{ "Proximity Mine", 0xAB564B93			}, //WeaponProximityMine
+	{ "Snowball", 0x787F0BB					}, //WeaponSnowball
+	{ "Vintage Pistol", 0x83839C4			}, //WeaponVintagePistol
+	{ "Dagger", 0x92A27487					}, //WeaponDagger
+	{ "Firework", 0x7F7497E5				}, //WeaponFirework
+	{ "Musket", 0xA89CB99E					}, //WeaponMusket
+	{ "Marksman Rifle", 0xC734385A			}, //WeaponMarksmanRifle
+	{ "Heavy Shotgun", 0x3AABBBAA			}, //WeaponHeavyShotgun
+	{ "Gusenberg", 0x61012683				}, //WeaponGusenberg
+	{ "Hatchet", 0xF9DCBF2D					}, //WeaponHatchet
+	{ "Rail Gun", 0x6D544C99				}, //WeaponRailgun
+	{ "Unarmed", 0xA2719263					}, //WeaponUnarmed
+	{ "Bottle", 0xF9E6AA4B					}, //WeaponBottle
+	{ "Flashlight", 0x8BB05FD7				}, //WeaponFlashlight
+	{ "Knuckle", 0xD8DF3C3C					}, //WeaponKnuckle
+	{ "Machete", 0xDD5DF8D9					}, //WeaponMachete
+	{ "Wrench", 0xDFE37640					}, //WeaponSwitchBlade
+	{ "Wrench", 0x19044EE0					}, //WeaponWrench
+	{ "Battle Axe", 0xCD274149				}, //WeaponBattleAxe
+	{ "Pool Cue", 0x94117305				}, //WeaponPoolCue
+	{ "Stone Hatchet", 0x3813FC08			}, //WeaponStoneHatchet
+	{ "Pistol Mk2", 0xBFE256D4				}, //WeaponPistolMk2
+	{ "SNS Pistol Mk2", 0x88374054			}, //WeaponSNSPistolMk2
+	{ "Flare Gun", 0x47757124				}, //WeaponFlareGun
+	{ "Marksman Pistol", 0xDC4DB296			}, //WeaponMarksmanPistol
+	{ "Revolver", 0xC1B3C3D1				}, //WeaponRevolver
+	{ "Revolver Mk2", 0xCB96392F			}, //WeaponRevolverMk2
+	{ "Double Action", 0x97EA20B8			}, //WeaponDoubleAction
+	{ "Ray Pistol", 0xAF3696A1				}, //WeaponRayPistol
+	{ "Ceramic Pistol", 0x2B5EF5EC			}, //WeaponCeramicPistol
+	{ "Navy Revolver", 0x917F6C8C			}, //WeaponNavyRevolver
+	{ "Gadget Pistol", 0x57A4368C			}, //WeaponGadgetPistol
+	{ "SMG Mk2", 0x78A97CD0					}, //WeaponSMGMk2
+	{ "Machine Pistol", 0xDB1AA450			}, //WeaponMachinePistol
+	{ "Mini SMG", 0xBD248B55				}, //WeaponMiniSMG
+	{ "Ray Carbine", 0x476BF155				}, //WeaponRayCarbine
+	{ "Pump Shotgun Mk2", 0x555AF99A		}, //WeaponPumpshotgunMk2
+	{ "Db Shotgun", 0xEF951FBB				}, //WeaponDbShotgun
+	{ "Auto Shotgun", 0x12E82D3D			}, //WeaponAutoShotgun
+	{ "Combat Shotgun", 0x5A96BA4			}, //WeaponCombatShotgun
+	{ "Assault Rifle Mk2", 0x394F415C		}, //WeaponAssaultRifleMk2
+	{ "Carbine Rifle Mk2", 0xFAD1F1C9		}, //WeaponCarbineRifleMk2
+	{ "Special Carbine Mk2", 0x969C3D67		}, //WeaponSpecialCarbineMk2
+	{ "Bullpup Rifle Mk2", 0x84D6FAFD		}, //WeaponBullpupRifleMk2
+	{ "Compact Rifle", 0x624FE830			}, //WeaponCompactRifle
+	{ "Military Rifle", 0x9D1F17E6			}, //WeaponMilitaryRifle
+	{ "Combat MG", 0xDBBD7280				}, //WeaponCombatMG
+	{ "Sniper Rifle", 0x05FC3C11			}, //WeaponSniperRifle
+	{ "Heavy Sniper", 0x0C472FE2			}, //WeaponHeavySniper
+	{ "Heavy Sniper Mk2", 0xA914799			}, //WeaponHeavySniperMk2
+	{ "Marksman Rifle", 0xC734385A			}, //WeaponMarksmanRifle
+	{ "Marksman Rifle Mk2", 0x6A6C02E0		}, //WeaponMarksmanRifleMk2
+	{ "Compact Launcher", 0x0781FE4A		}, //WeaponCompactLauncher
+	{ "Ray Minigun", 0xB62D1F67				}, //WeaponRayMinigun
+	{ "Pipe Bomb", 0xBA45E8B8				}, //WeaponPipeBomb
+	{ "Ball", 0x23C9F95C					}, //WeaponBall
+	{ "Flare", 0x497FACC3					}, //WeaponFlare
+	{ "Parachute", 0xFBAB5776				}, //WeaponParachute
+	{ "Fire Extinguisher", 0x060EC506		}, //WeaponFireExtinguisher
+	{ "Hazard Can", 0xBA536372				}  //WeaponHazardCan
+};
+
 const int Cheat::GameArrays::RankPointsArray[8000] = {
 0, 800, 2100, 3800, 6100, 9500, 12500, 16000, 19800, 24000, 28500, 33400, 38700, 44200, 50200, 56400, 63000, 69900, 77100, 84700, 92500, 100700, 109200, 118000, 127100, 136500, 146200,
 156200, 166500, 177100, 188000, 199200, 210700, 222400, 234500, 246800, 259400, 272300, 285500, 299000, 312700, 326800, 341000, 355600, 370500, 385600, 401000, 416600, 432600, 448800, 465200, 482000, 499000,
@@ -817,44 +923,551 @@ const std::vector<std::string> Cheat::GameArrays::SummerSpecialModels = {
 	"DUKES3",			"COQUETTE4",	"CLUB"
 };
 
-//TODO: Very tedious, WIP
+const std::vector<std::string> Cheat::GameArrays::CayoPericoHeistModels = {
+	"ALKONOST",	"ANNIHILATOR2", "AVISA",
+	"BRIOSO2", "DINGHY5", "ITALIRSX", "VETO2",
+	"PENUMBRA2", "OPENWHEEL2", "KOSATKA",
+	"LONGFIN", "MANCHEZ2",  "PATROLBOAT",
+	"SEASPARROW2", "seasparrow3", "SQUADDIE",
+	"SLAMTRUCK", "TOREADOR", "VERUS",
+	"VETIR", "WINKY","WEEVIL", "VETO",	
+};
+
 const std::vector<VehicleModelPicturesStruct> Cheat::GameArrays::VehicleModelPictures = {
-	{ "lgm_dlc_specialraces", "ruston" }
+{"candc_heist4","alkonost"},
+{"candc_heist4","annihilator2"},
+{"candc_heist4","avisa"},
+{"sssa_dlc_heist4","brioso2"},
+{"candc_heist4","dinghy5"},
+{"lgm_dlc_heist4","italirsx"},
+{"sssa_dlc_heist4","kosatka"},
+{"dock_dlc_heist4","longfin"},
+{"candc_heist4","manchez2"},
+{"candc_heist4","patrolboat"},
+{"sssa_dlc_heist4","seasparrow2"},
+{"candc_heist4","seasparrow3"},
+{"sssa_dlc_heist4","slamtruck"},
+{"candc_heist4","squaddie"},
+{"candc_heist4","toreador"},
+{"candc_heist4","verus"},
+{"candc_heist4","vetir"},
+{"candc_heist4","veto"},
+{"candc_heist4","veto2"},
+{"candc_heist4","weevil"},
+{"candc_heist4","winky"},
+{"lgm_dlc_executive1","pfister811"},
+{"lgm_default","adder"},
+{"lgm_dlc_xmas2017","autarch_b"},
+{"lsc_jan2016","banshee2"},
+{"lgm_default","bullet"},
+{"lgm_default","cheetah"},
+{"lgm_dlc_smuggler","cyclone"},
+{"lgm_dlc_smuggler","cyclone"},
+{"lgm_dlc_arena","deveste"},
+{"lgm_dlc_stunt","sheava"},
+{"lgm_dlc_vinewood","emerus"},
+{"lgm_dlc_assault","entity2"},
+{"lgm_default","entityxf"},
+{"lgm_dlc_executive1","fmj"},
+{"lgm_dlc_casinoheist","furia"},
+{"lgm_dlc_specialraces","gp1"},
+{"sssa_default","infernus"},
+{"lsc_dlc_import_export","italigtb2"},
+{"lsc_dlc_import_export","italigtb"},
+{"lgm_dlc_vinewood","krieger"},
+{"lsc_dlc_import_export","nero2_b"},
+{"lsc_dlc_import_export","nero2_a"},
+{"lgm_dlc_luxe","Osiris"},
+{"lgm_dlc_importexport","penetrator"},
+{"lgm_dlc_stunt","le7b"},
+{"lgm_dlc_executive1","reaper"},
+{"candc_importexport","voltic2"},
+{"lgm_dlc_vinewood","s80"},
+{"lgm_dlc_xmas2017","sc1_b"},
+{"candc_battle","scramjet"},
+{"lsc_jan2016","sultan2_a"},
+{"lgm_dlc_luxe","t20"},
+{"lgm_dlc_assault","taipan"},
+{"lgm_dlc_importexport","tempesta"},
+{"lgm_dlc_assault","tezeract"},
+{"lgm_dlc_vinewood","thrax"},
+{"lgm_dlc_business","turismor"},
+{"lgm_dlc_assault","tyrant"},
+{"lgm_dlc_stunt","tyrus"},
+{"lgm_default","vacca"},
+{"lgm_dlc_gunrunning","vagner"},
+{"candc_smuggler","vigilante"},
+{"lgm_dlc_smuggler","visione"},
+{"lgm_default","voltic_tless"},
+{"lgm_dlc_executive1","prototipo"},
+{"lgm_dlc_gunrunning","xa21"},
+{"lgm_dlc_business2","zentorno"},
+{"lgm_dlc_vinewood","zorrusso"},
+{"lgm_dlc_business","alpha"},
+{"lgm_dlc_business2","banshee_tless"},
+{"sssa_dlc_mp_to_sp","blista2"},
+{"lgm_dlc_executive1","bestiagts"},
+{"sssa_dlc_hipster","buffalo"},
+{"sssa_dlc_mp_to_sp","buffalo3"},
+{"sssa_dlc_hipster","buffalo"},
+{"lgm_default","carboniz"},
+{"lsc_dlc_import_export","comet3"},
+{"sssa_default","comet2"},
+{"lgm_dlc_xmas2017","comet4_b"},
+{"lgm_dlc_xmas2017","comet5_b"},
+{"lgm_default","coquette"},
+{"lgm_dlc_vinewood","drafter"},
+{"sssa_dlc_stunt","tampa2"},
+{"lgm_default","elegy2"},
+{"lsc_dlc_import_export","elegy"},
+{"lgm_dlc_casinoheist", "formula"},
+{"lgm_dlc_casinoheist", "formula2"},
+{"lgm_dlc_assault","flashgt"},
+{"lgm_dlc_lts_creator","furore"},
+{"sssa_dlc_business2","fusilade"},
+{"sssa_dlc_battle","futo"},
+{"lgm_dlc_assault","gb200"},
+{"sssa_dlc_assault","hotring"},
+{"lgm_dlc_casinoheist","imorgon"},
+{"sssa_dlc_vinewood","issi7"},
+{"lgm_dlc_arena","italigto"},
+{"sssa_dlc_christmas_2","jester2"},
+{"lgm_dlc_assault","jester3"},
+{"lgm_dlc_business","jester"},
+{"lgm_dlc_vinewood","jugular"},
+{"lgm_dlc_casinoheist","komoda"},
+{"sssa_dlc_heist","kuruma2"},
+{"sssa_dlc_heist","kuruma"},
+{"lgm_dlc_vinewood","locust"},
+{"lgm_dlc_stunt","lynx"},
+{"sssa_dlc_christmas_2","massacro2"},
+{"lgm_dlc_business2","massacro"},
+{"lgm_dlc_vinewood","neo"},
+{"lgm_dlc_xmas2017","neon_b"},
+{"lgm_default","ninef2"},
+{"sssa_default","ninef"},
+{"sssa_dlc_stunt","omnis"},
+{"lgm_dlc_vinewood","paragon"},
+{"lgm_dlc_vinewood","paragon"},
+{"lgm_dlc_xmas2017","pariah_b"},
+{"sssa_dlc_business2","penumbra"},
+{"lgm_dlc_xmas2017","raiden_b"},
+{"lgm_default","rapidgt2"},
+{"lgm_default","rapidgt"},
+{"lgm_dlc_biker","raptor"},
+{"lgm_dlc_xmas2017","revolter_b"},
+{"lgm_dlc_specialraces","ruston"},
+{"lgm_dlc_apartments","schafter4"},
+{"lgm_dlc_apartments","schafter3"},
+{"lgm_dlc_arena","schlagen"},
+{"sssa_default","schwarze"},
+{"sssa_dlc_xmas2017","sentinel3_b"},
+{"lgm_dlc_executive1","seven70"},
+{"lsc_dlc_import_export","specter2_a"},
+{"lsc_dlc_import_export","specter2_b"},
+{"lgm_dlc_xmas2017","streiter_b"},
+{"sssa_dlc_casinoheist","sugoi"},
+{"lsc_jan2016","sultan2_a"},
+{"sssa_dlc_casinoheist","sultan2"},
+{"lgm_default","surano_convertable"},
+{"sssa_dlc_stunt","tropos"},
+{"lgm_dlc_casinoheist","vstr"},
+{"lgm_dlc_apartments","verlier"},
+{"mba_vehicles","zr3802"},
+{"mba_vehicles","zr3803"},
+{"mba_vehicles","zr3801"},
+{"candc_gunrunning","ardent"},
+{"lgm_dlc_heist","casco"},
+{"sssa_dlc_assault","cheburek"},
+{"lgm_dlc_gunrunning","cheetah2"},
+{"lgm_dlc_pilot","coquette2"},
+{"candc_xmas2017","deluxo_b"},
+{"sssa_dlc_vinewood","dynasty"},
+{"sssa_dlc_assault","fagaloa"},
+{"lgm_dlc_xmas2017","gt500_b"},
+{"lgm_dlc_specialraces","infernus2"},
+{"lgm_default","jb700"},
+{"lgm_default","jb700"},
+{"lgm_dlc_apartments","mamba"},
+{"sssa_dlc_assault","michelli"},
+{"lgm_default","monroe"},
+{"sssa_dlc_vinewood","nebula"},
+{"sssa_dlc_hipster","pigalle"},
+{"lgm_dlc_smuggler","rapidgt3"},
+{"sssa_dlc_casinoheist","retinue2"},
+{"sssa_dlc_smuggler","retinue_b"},
+{"sssa_dlc_halloween","btype2"},
+{"lgm_dlc_valentines2","roosevelt2"},
+{"lgm_dlc_valentines","roosevelt"},
+{"lgm_dlc_xmas2017","savestra_b"},
+{"lgm_default","stingerg"},
+{"lgm_default","stinger"},
+{"lgm_dlc_luxe","feltzer3"},
+{"candc_xmas2017","stromberg_b"},
+{"lgm_dlc_battle","swinger"},
+{"lgm_dlc_gunrunning","torero"},
+{"lsc_lowrider2","tornado5_a"},
+{"sssa_dlc_biker","tornado6"},
+{"lgm_dlc_specialraces","turismo2"},
+{"lgm_dlc_xmas2017","viseris_b"},
+{"lgm_default","ztype"},
+{"lgm_dlc_xmas2017","z190_b"},
+{"sssa_dlc_vinewood","zion3"},
+{"lgm_default","cogcabri"},
+{"sssa_default","exemplar"},
+{"sssa_dlc_business2","f620"},
+{"sssa_default","felon"},
+{"sssa_default","felon2"},
+{"sssa_dlc_heist","jackal"},
+{"sssa_default","oracle"},
+{"sssa_dlc_heist","oracle1"},
+{"sssa_dlc_business2","sentinel"},
+{"sssa_dlc_business2","sentinel"},
+{"lgm_dlc_luxe","windsor"},
+{"sssa_default","zion"},
+{"sssa_default","zion2"},
+{"sssa_dlc_hipster","blade"},
+{"lsc_default","buccaneer2_b"},
+{"lsc_default","buccaneer2_a"},
+{"lsc_default","chino2_a"},
+{"lgm_dlc_luxe","chino"},
+{"lgm_dlc_arena","clique"},
+{"lgm_dlc_luxe","coquette3"},
+{"lgm_dlc_arena","deviant"},
+{"sssa_dlc_assault","dominator3"},
+{"mba_vehicles","dominato_c_1"},
+{"mba_vehicles","dominato_c_2"},
+{"mba_vehicles","dominato_c_3"},
+{"sssa_dlc_business2","dominato"},
+{"candc_default","dukes"},
+{"sssa_dlc_mp_to_sp","dukes"},
+{"sssa_dlc_assault","ellie"},
+{"lsc_lowrider2","faction3_b"},
+{"lsc_lowrider2","faction3_a"},
+{"lsc_default","faction2_a"},
+{"sssa_dlc_mp_to_sp","gauntlet2"},
+{"sssa_dlc_vinewood","gauntlet3"},
+{"sssa_dlc_vinewood","gauntlet4"},
+{"sssa_default","gauntlet"},
+{"sssa_dlc_xmas2017","hermes_b"},
+{"lgm_default","hotknife"},
+{"lgm_dlc_xmas2017","hustler_b"},
+{"mba_vehicles","impaler"},
+{"sssa_dlc_vinewood","impaler"},
+{"mba_vehicles","impaler_c_1"},
+{"mba_vehicles","impaler_c_2"},
+{"mba_vehicles","impaler_c_3"},
+{"mba_vehicles","imperator2"},
+{"mba_vehicles","imperator3"},
+{"mba_vehicles","imperator1"},
+{"sssa_dlc_halloween","lurcher"},
+{"lsc_default","moonbeam2"},
+{"lgm_dlc_apartments","niteshad"},
+{"sssa_dlc_vinewood","peyote2"},
+{"sssa_dlc_hipster","picador"},
+{"sssa_dlc_mp_to_sp","dominator2"},
+{"sssa_dlc_valentines","rloader"},
+{"sssa_dlc_christmas_2","rloader2"},
+{"candc_importexport","ruiner2"},
+{"sssa_dlc_battle","ruiner"},
+{"lsc_lowrider2","sabregt2_a"},
+{"lsc_lowrider2","slamvan3_b"},
+{"mba_vehicles","slamvan_c_1"},
+{"mba_vehicles","slamvan_c_2"},
+{"mba_vehicles","slamvan_c_3"},
+{"sssa_dlc_christmas_2","slamvan"},
+{"sssa_dlc_mp_to_sp","stalion2"},
+{"sssa_dlc_mp_to_sp","stallion"},
+{"candc_gunrunning","tampa3"},
+{"sssa_dlc_christmas_3","tampa"},
+{"sssa_dlc_arena","tulip"},
+{"sssa_dlc_arena","vamos"},
+{"sssa_default","vigero"},
+{"lsc_lowrider2","virgo2_a"},
+{"lsc_lowrider2","virgo2_b"},
+{"lgm_dlc_luxe","virgo"},
+{"lsc_default","voodoo_b"},
+{"lsc_default","voodoo_a"},
+{"sssa_dlc_xmas2017","yosemite_b"},
+{"sssa_dlc_casinoheist","yosemite2"},
+{"sssa_default","bfinject"},
+{"sssa_default","bifta"},
+{"sssa_dlc_hipster","blazer3"},
+{"candc_importexport","blazer5"},
+{"sssa_default","blazer"},
+{"sssa_dlc_biker","blazer4"},
+{"sssa_default","bodhi2"},
+{"lgm_dlc_luxe","brawler"},
+{"mba_vehicles","bruiser_c_2"},
+{"mba_vehicles","bruiser_c_3"},
+{"mba_vehicles","bruiser_c_1"},
+{"mba_vehicles","brutus2"},
+{"mba_vehicles","brutus3"},
+{"mba_vehicles","brutus1"},
+{"sssa_dlc_vinewood","caracara2"},
+{"candc_assault","caracara"},
+{"candc_default","dubsta3"},
+{"candc_gunrunning","dune3"},
+{"sssa_default","dune"},
+{"sssa_dlc_casinoheist","everon"},
+{"lgm_dlc_battle","freecrawler"},
+{"sssa_dlc_vinewood","hellion"},
+{"ua_generic","ua_unlock_11"},
+{"candc_default","insurgent"},
+{"candc_default","insurgent"},
+{"sssa_default","kalahari"},
+{"sssa_dlc_xmas2017","kamacho_b"},
+{"candc_default","marshall"},
+{"candc_battle","menacer"},
+{"candc_default","mesa3"},
+{"mba_vehicles","monster_c_1"},
+{"mba_vehicles","monster_c_2"},
+{"mba_vehicles","monster_c_3"},
+{"candc_gunrunning","nightshark"},
+{"sssa_dlc_casinoheist","outlaw"},
+{"candc_importexport","dune5"},
+{"sssa_dlc_business","rancherx"},
+{"sssa_dlc_arena","rcbandito"},
+{"sssa_dlc_hipster","rebel2"},
+{"sssa_default","rebel"},
+{"sssa_dlc_xmas2017","riata_b"},
+{"sssa_default","sandking_b"},
+{"sssa_default","sandkin_2b"},
+{"candc_importexport","technical2"},
+{"ua_generic","ua_unlock_15"},
+{"candc_default","technical"},
+{"candc_default","monster"},
+{"sssa_dlc_stunt","trophy2"},
+{"sssa_dlc_stunt","trophy"},
+{"sssa_dlc_casinoheist","vagrant"},
+{"sssa_default","akuma"},
+{"sssa_dlc_biker","avarus"},
+{"sssa_dlc_stunt","bf400"},
+{"sssa_dlc_biker","bagger"},
+{"sssa_default","bati2"},
+{"sssa_default","bati"},
+{"lgm_default","carbon"},
+{"sssa_dlc_biker","chimera"},
+{"sssa_dlc_stunt","cliffhanger"},
+{"sssa_dlc_biker","daemon2"},
+{"mba_vehicles","deathbike_c_2"},
+{"mba_vehicles","deathbike_c_3"},
+{"mba_vehicles","deathbike_c_1"},
+{"sssa_dlc_biker","defiler"},
+{"lsc_dlc_import_export","diablous2"},
+{"sssa_default","double"},
+{"sssa_dlc_heist","enduro"},
+{"sssa_dlc_biker","esskey"},
+{"lsc_dlc_import_export","fcr2_b"},
+{"lsc_dlc_import_export","fcr2_a"},
+{"sssa_dlc_biker","faggio3"},
+{"sssa_default","faggio"},
+{"sssa_dlc_biker","faggion"},
+{"sssa_dlc_stunt","gargoyle"},
+{"lgm_dlc_biker","hakuchou2"},
+{"sssa_dlc_lts_creator","hakuchou"},
+{"sssa_default","hexer"},
+{"sssa_dlc_lts_creator","innovation"},
+{"lgm_dlc_heist","lectro"},
+{"sssa_dlc_biker","manchez"},
+{"sssa_dlc_heist","nemesis"},
+{"sssa_dlc_biker","nightblade"},
+{"candc_battle","oppressor2"},
+{"candc_gunrunning","oppressor"},
+{"sssa_default","pcj"},
+{"sssa_dlc_biker","ratbike"},
+{"lgm_dlc_vinewood","rrocket"},
+{"sssa_default","ruffian"},
+{"sssa_default","sanchez2"},
+{"sssa_default","sanchez"},
+{"sssa_dlc_biker","sanctus"},
+{"lgm_dlc_biker","shotaro"},
+{"lgm_dlc_casinoheist","stryder"},
+{"lgm_dlc_business2","thrust"},
+{"sssa_default","vader"},
+{"lgm_dlc_luxe","vindicator"},
+{"sssa_dlc_biker","vortex"},
+{"sssa_dlc_biker","wolfsbane"},
+{"sssa_dlc_biker","zombieb"},
+{"sssa_dlc_biker","zombiea"},
+{"candc_gunrunning","apc"},
+{"candc_gunrunning","trsmall2"},
+{"candc_default","barracks"},
+{"candc_xmas2017","barrage_b"},
+{"candc_xmas2017","chernobog_b"},
+{"candc_default","crusader"},
+{"candc_gunrunning","halftrack"},
+{"candc_xmas2017","khanjali_b"},
+{"candc_default","rhino"},
+{"mba_vehicles","scarab2"},
+{"mba_vehicles","scarab3"},
+{"mba_vehicles","scarab1"},
+{"candc_xmas2017","thruster_b"},
+{"candc_default","pbus"},
+{"candc_xmas2017","riot2_b"},
+{"candc_default","airbus"},
+{"candc_executive1","brickade"},
+{"candc_default","bus"},
+{"candc_default","coach"},
+{"sssa_dlc_stunt","rallytruck"},
+{"sssa_dlc_battle","pbus2"},
+{"candc_default","rentbus"},
+{"candc_importexport","wastlndr"},
+{"sssa_dlc_business","asea"},
+{"sssa_dlc_business","astrope"},
+{"lgm_dlc_apartments","cognosc"},
+{"sssa_dlc_business","premier"},
+{"sssa_default","superd"},
+{"sssa_default","fugitive"},
+{"sssa_dlc_hipster","glendale"},
+{"sssa_dlc_business","intruder"},
+{"sssa_default","stretch"},
+{"sssa_dlc_hipster","primo"},
+{"sssa_dlc_hipster","regina"},
+{"sssa_dlc_battle","Romero"},
+{"lgm_dlc_apartments","schafter3"},
+{"lgm_dlc_apartments","schafter4"},
+{"sssa_dlc_heist","schafter2"},
+{"lgm_dlc_battle","stafford"},
+{"sssa_dlc_business","stanier"},
+{"sssa_dlc_business","stratum"},
+{"sssa_dlc_heist","surge"},
+{"sssa_dlc_hipster","tailgater"},
+{"sssa_dlc_business","ingot"},
+{"sssa_dlc_hipster","warrener"},
+{"sssa_dlc_business","washingt"},
+{"candc_default","dump"},
+{"sssa_dlc_heist","guardian"},
+{"sssa_dlc_casinoheist","asbo"},
+{"sssa_default","dilettan"},
+{"sssa_dlc_stunt","brioso"},
+{"sssa_dlc_assault","issi3"},
+{"mba_vehicles","issi3_c_1"},
+{"mba_vehicles","issi3_c_2"},
+{"mba_vehicles","issi3_c_3"},
+{"sssa_dlc_casinoheist","kanjo"},
+{"sssa_dlc_hipster","panto"},
+{"sssa_dlc_battle","prairie"},
+{"sssa_dlc_hipster","rhapsody"},
+{"sssa_default","issi2"},
+{"mba_vehicles","cerberus2"},
+{"mba_vehicles","cerberus3"},
+{"mba_vehicles","cerberus1"},
+{"candc_truck","cab_1"},
+{"candc_default","mule3"},
+{"candc_battle","mule4"},
+{"candc_default","mule"},
+{"candc_truck","cab_0"},
+{"candc_importexport","phantom2"},
+{"candc_battle","pounder2"},
+{"elt_dlc_smuggler","alphaz1"},
+{"candc_chopper","banner_5"},
+{"candc_chopper","banner_4"},
+{"elt_dlc_pilot","besra"},
+{"elt_dlc_battle","blimp3"},
+{"candc_smuggler","bombushka"},
+{"elt_default","cuban800"},
+{"elt_default","dodo"},
+{"elt_default","duster"},
+{"elt_dlc_smuggler","howard"},
+{"candc_default","hydra"},
+{"elt_dlc_executive1","luxor2"},
+{"elt_default","luxor"},
+{"elt_default","mammatus"},
+{"elt_dlc_smuggler","microlight"},
+{"elt_dlc_pilot","miljet"},
+{"candc_smuggler","mogu"},
+{"candc_smuggler","molotok_b"},
+{"elt_dlc_executive1","nimbus"},
+{"candc_smuggler","nokota"},
+{"candc_smuggler","lazer"},
+{"candc_smuggler","pyro"},
+{"candc_smuggler","rogue"},
+{"elt_dlc_smuggler","seabreeze"},
+{"elt_default","shama"},
+{"candc_smuggler","starling"},
+{"candc_battle","strikeforce"},
+{"elt_default","stunt"},
+{"elt_default","titan"},
+{"candc_smuggler","tula"},
+{"elt_default","velum2"},
+{"elt_default","velum"},
+{"candc_xmas2017","volatol_b"},
+{"foreclosures_bunker","transportation_2"},
+{"foreclosures_bunker","transportation_1"},
+{"candc_truck","banner_2"},
+{"sssa_default","sadler"},
+{"candc_xmas2017","akula_b"},
+{"elt_default","annih"},
+{"candc_default","buzzard"},
+{"candc_default","cargobob"},
+{"elt_default","frogger"},
+{"elt_dlc_smuggler","havok"},
+{"candc_smuggler","hunter"},
+{"elt_default","maverick"},
+{"candc_default","savage"},
+{"elt_dlc_assault","sparrow"},
+{"elt_dlc_executive1","swift2"},
+{"elt_dlc_pilot","swift"},
+{"candc_default","valkyrie"},
+{"elt_dlc_executive1","volatus"},
+{"sssa_dlc_hipster","surfer"},
+{"sssa_default","bison"},
+{"sssa_dlc_business","bobcatx"},
+{"candc_importexport","boxville5"},
+{"candc_default","boxville4"},
+{"sssa_dlc_heist","gburrito2"},
+{"candc_default","journey"},
+{"lsc_lowrider2","minivan2_b"},
+{"sssa_dlc_business","minivan"},
+{"sssa_default","paradise"},
+{"sssa_dlc_executive_1","rumpo3_b"},
+{"sssa_dlc_heist","rumpo"},
+{"sssa_dlc_biker","youga2"},
+{"sssa_dlc_hipster","youga"},
+{"dock_default","dinghy3"},
+{"dock_default","jetmax"},
+{"dock_default","marquis"},
+{"dock_default","seashark"},
+{"dock_default","squalo"},
+{"dock_default","sub2"},
+{"dock_default","suntrap"},
+{"dock_default","toro"},
+{"dock_default","tropic"},
+{"pandm_default","bmx"},
+{"pandm_default","cruiser"},
+{"pandm_default","tribike2"},
+{"pandm_default","scorcher"},
+{"pandm_default","tribike3"},
+{"pandm_default","tribike"},
+{"sssa_default","baller2"},
+{"lgm_dlc_apartments","baller4"},
+{"lgm_dlc_apartments","baller3"},
+{"sssa_dlc_battle","bjx"},
+{"sssa_dlc_heist","seminole"},
+{"sssa_dlc_business","cavcade2"},
+{"sssa_default","cavcade"},
+{"sssa_dlc_stunt","contender"},
+{"sssa_dlc_battle","habanero"},
+{"lgm_dlc_business2","huntley"},
+{"sssa_dlc_battle","fq2"},
+{"sssa_dlc_business","granger"},
+{"sssa_dlc_heist","gresley"},
+{"sssa_dlc_heist","landstalker"},
+{"sssa_dlc_battle","patriot"},
+{"candc_default","mesa"},
+{"lgm_dlc_vinewood","novak"},
+{"sssa_dlc_battle","patriot2"},
+{"sssa_dlc_business","radi"},
+{"lgm_dlc_casinoheist","rebla"},
+{"sssa_default","rocoto"},
+{"sssa_dlc_battle","serrano"},
+{"lgm_dlc_arena","toros"},
+{"lgm_dlc_executive1","xls"}
 };
 
 
 /*
-if (ModelName == "gp1")
-		{
-			VehiclePreviewDictName = "lgm_dlc_specialraces";
-			VehiclePreviewName = "gp1";
-		}
-		if (ModelName == "turismo2")
-		{
-			VehiclePreviewDictName = "lgm_dlc_specialraces";
-			VehiclePreviewName = "turismo2";
-		}
-
-		 if (ModelName == "infernus2")
-		{
-			VehiclePreviewDictName = "lgm_dlc_specialraces";
-			VehiclePreviewName = "infernus2";
-		}
-		 if (ModelName == "ALPHAZ1")
-		{
-			VehiclePreviewDictName = "elt_dlc_smuggler";
-			VehiclePreviewName = "alphaz1";
-		}
-		 if (ModelName == "BOMBUSHKA")
-		{
-			VehiclePreviewDictName = "candc_smuggler";
-			VehiclePreviewName = "bombushka";
-		}
-		 if (ModelName == "CYCLONE")
-		{
-			VehiclePreviewDictName = "lgm_dlc_smuggler";
-			VehiclePreviewName = "cyclone";
-		}
 		 if (ModelName == "HAVOK")
 		{
 			VehiclePreviewDictName = "elt_dlc_smuggler";

@@ -239,7 +239,7 @@ bool Cheat::VehicleOption(std::string option, std::string ModelName)
 	}
 	if (GUI::currentOption == GUI::optionCount)
 	{
-		std::transform(ModelName.begin(), ModelName.end(), ModelName.begin(), ::tolower);
+		std::transform(ModelName.begin(), ModelName.end(), ModelName.begin(), tolower);
 		VehiclePreviewDictName = "Textures";
 		VehiclePreviewName	   = "NoVehiclePreviewAvailable";
 
@@ -835,11 +835,6 @@ void Cheat::GUI::BackMenu()
 	GUI::menuLevel--;
 	GUI::currentMenu = GUI::menusArray[GUI::menuLevel];
 	GUI::currentOption = GUI::optionsArray[GUI::menuLevel];
-}
-
-void Cheat::Speedometer(std::string text)
-{
-	GUI::Drawing::Text(text, { 0, 0, 255, 255 }, { 0.90f, 0.5000f }, { 0.70f, 0.70f }, false);
 }
 
 void Cheat::AddPlayerInfoBoxTextEntry(std::string text, int Row1, int Row2, int Row3, int Row4)
